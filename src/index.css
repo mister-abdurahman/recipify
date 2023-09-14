@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(5rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(12vh, min-content));
+  font-size: 1.4rem;
+}
+.search-bar {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+.recipe-result {
+  grid-column: 1/2;
+  grid-row: 2 /-1;
+}
+@media only screen and (max-width: 640px) {
+  .recipe-result {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    overflow: scroll;
+  }
+}
+.recipe-detail {
+  grid-column: 2/4;
+  grid-row: 2 /-1;
+}
+@media only screen and (max-width: 640px) {
+  .recipe-detail {
+    grid-row: 3/-1;
+    grid-column: 1/-1;
+  }
+}
+svg {
+  fill: #f46858;
+}
+.detail-bookmark {
+  fill: #fff;
+  /* background-image: bg-gradient-to-br from-yellow-300 to-red-600; */
+}
+button > svg,
+a > svg {
+  fill: #fff;
+}
+/* convert all styles to tailwind */
+
+.styled-recipe-title {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.recipe-detail--img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.65;
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+}
+.each-recipe-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  opacity: 0.4;
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+}
+
+.ingredient-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  /* grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr)); */
+  gap: 2rem;
+  /* align-items: left; */
+  /* align-items: center; */
+  /* align-content: center; */
+}
+
+/* form styling */
+.form-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  /* display: none;
+  opacity: 0;
+  visibility: hidden; */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+}
+@media only screen and (max-width: 640px) {
+  .form-container {
+    height: 100%;
+    position: absolute;
+  }
+}
+.form-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  justify-items: center;
+  opacity: 0.75;
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+  /* color: white; */
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+@media only screen and (max-width: 880px) {
+  .form-box {
+    grid-template-columns: minmax(min-content, 1fr);
+    gap: 3rem;
+  }
+}
