@@ -1,6 +1,4 @@
 import { createContext, useContext, useReducer } from "react";
-import BookmarkList from "../components/BookmarkList";
-
 export const BASE_URL = `https://forkify-api.herokuapp.com/api/v2/recipes`;
 
 export const KEY = `d42b1abe-462b-4ab9-be18-010d353e7614`;
