@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { eachRecipeType, useRecipe } from "../contexts/recipeContext"
 import { EachRecipeResult } from "./EachRecipe";
 import { Pagination } from './Pagination';
@@ -9,7 +9,7 @@ import ErrorMsg from './ErrorMsg';
 export function RecipesResult() {
     const { recipes, loading, error } = useRecipe();
     const [currentPage, setCurrentPage] = useState(1);
-    const [recipesPerPage, setRecipesPerPage] = useState(10);
+    const [recipesPerPage] = useState(10);
 
     const lastRecipeIndex = currentPage * recipesPerPage;
     const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
