@@ -1,4 +1,3 @@
-import React from 'react';
 import { selectedRecipeType, useRecipe } from '../contexts/recipeContext';
 import { EachRecipeResult } from './EachRecipe';
 
