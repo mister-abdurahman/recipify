@@ -3,7 +3,6 @@ import logo from '../assets/favicon.png';
 import svg from '../assets/icons.svg';
 import { useRecipe } from '../contexts/recipeContext';
 import BookmarkList from './BookmarkList';
-import { Button } from '@mui/material';
 
 export function SearchBar({ setOpen }: any) {
     const [query, setQuery] = useState('')
